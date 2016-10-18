@@ -1,13 +1,14 @@
 <html>
     <head>
-        <title>Andy's blog</title>
+        <title>Test blog</title>
     </head>
     <body>
-    	<h1>What I did today.</h1>
-        <p>Diversity Training</p>
-        <em>Django Tutorial</em>
-        <div>
-        	<strong>When is lunch?</strong>
-        </div>
+        {% for post in posts %}
+    		<div>
+        		<p>published: {{ post.published_date }}</p>
+        		<h1><a href="">{{ post.title }}</a></h1>
+        		<p>{{ post.text|linebreaksbr }}</p>
+    		</div>
+		{% endfor %}
     </body>
 </html>
